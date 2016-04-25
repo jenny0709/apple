@@ -238,11 +238,13 @@
   }
   .max-nav li:nth-last-child(3) {
     border-bottom: 1px solid #fff;
+    height: 50px;
+    line-height: 50px;
   }
   .max-nav li:nth-last-child(3) a {
     display: inline-block;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     background-image: url("../images/search.png");
     background-repeat: no-repeat;
     background-position: center center;
@@ -297,13 +299,19 @@
     clear: both;
   }
   .banner {
-    min-height: 450px;
+    min-height: 300px;
   }
   .banner .dabanner {
-    min-height: 450px;
+    min-height: 300px;
   }
   .banner .dabanner a {
     background-size: 120%;
+  }
+  .banner .lrbtn {
+    display: none;
+  }
+  .banner .btns {
+    bottom: 10px;
   }
   .footer .footerbox {
     font-size: 9px;

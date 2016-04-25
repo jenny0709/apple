@@ -10,7 +10,6 @@
   position: relative;
   .dabanner{
     width:100%;
-    //min-height: 650px;
     a{
       position: absolute;
       left:0;
@@ -241,10 +240,12 @@
     }
     li:nth-last-child(3){
       border-bottom: 1px solid #fff;
+      height:50px;
+      line-height: 50px;
       a{
         display: inline-block;
-        width:24px;
-        height:24px;
+        width:20px;
+        height:20px;
         background-image: url("../images/search.png");
         background-repeat: no-repeat;
         background-position:center center;
@@ -300,12 +301,18 @@
     }
   }
   .banner{
-    min-height: 450px;
+    min-height: 300px;
     .dabanner{
-      min-height: 450px;
+      min-height: 300px;
       a{
         background-size: 120%;
       }
+    }
+    .lrbtn{
+      display: none;
+    }
+    .btns{
+      bottom:10px;
     }
   }
   .footer .footerbox{
