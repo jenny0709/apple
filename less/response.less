@@ -1,0 +1,102 @@
+@import "var.less";
+.img-response{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+.pad(@padding){
+  padding-left: @padding;
+  padding-right: @padding;
+}
+.container{
+  &{
+    display: block;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    .pad(@padding);
+  }
+  &-fluid{
+    display: block;
+    height:auto;
+    .pad(@padding);
+  }
+  & .row,&-fluid .row{
+    height:auto;
+    margin-left: -@padding;
+    margin-right: -@padding;
+  }
+  & .row:after,&-fluid .row:after{
+    content:"";
+    display: block;
+    height:0;
+    line-height: 0;
+    clear: both;
+  }
+}
+.grid(@type,@i:1) when (@i<=@cols){
+  .col-@{type}-@{i}{
+    display: block;
+    float: left;
+    width:100%/@cols*@i;
+    .pad(@padding);
+  }
+  .grid(@type,@i+1);
+}
+/*w<768 手机*/
+.grid(xs,1);
+.g(@width,@name){
+  @media screen and (min-width: @width){
+    .container{
+      width:@width - @padding * 2;
+    }
+    .grid(@name);
+  }
+}
+/*w>768 &w<992 平板*/
+.g(@smscreen,sm);
+/*w>992 $w<1200 pc 小屏*/
+.g(@mdscreen,md);
+/*w>1200  pc 大屏*/
+.g(@lgscreen,lg);
+
+/*隐藏*/
+  /*w<768 手机*/
+@media screen and (max-width: @smscreen){
+  .hidden-xs{
+    display: none!important;
+  }
+}
+  /*w>768 &w<992 平板*/
+@media screen and (min-width: @smscreen) and (max-width: @mdscreen){
+  .hidden-sm{
+    display: none!important;
+  }
+}
+  /*w>992 $w<1200 pc 小屏*/
+@media screen and (min-width: @mdscreen) and (max-width: @lgscreen){
+  .hidden-md{
+    display: none!important;
+  }
+}
+/*w>1200  pc 大屏*/
+@media screen and (min-width: @lgscreen){
+  .hidden-lg{
+    display: none!important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
